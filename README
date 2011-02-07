@@ -2,9 +2,13 @@
 File Hatchet
 ============
 
-   File Hatchet is a command for splitting a large file into multiple
-   smaller files for distribution and for combining the smaller files
-   back into a single large file.
+   File Hatchet is a utility for splitting a large file into multiple smaller
+   "chip" files for distribution. The chip files use the file format .B2S
+   (Big To Small).  Planned features for File Hatchet include the ability to
+   verify data integrity of both the "chips" and the restored orignal file;
+   the ability to incrementally rebuild the original file from the chips; the
+   ability to regenerate any one chip from the original file; and the ability
+   to repair the corrupted segments of the orignal file using the chips.
 
 
 Contents
@@ -12,10 +16,11 @@ Contents
 
    1. Disclaimer
    2. Software Requirements
-   3. Maintainers
-   4. Community
-   5. Source Code
-   6. Package Maintence Notes
+   3. File Format .B2S Version 1
+   4. Maintainers
+   5. Community
+   6. Source Code
+   7. Package Maintence Notes
 
 
 Disclaimer
@@ -38,6 +43,42 @@ Software Requirements
 =====================
 
    Git 1.7.2.3
+
+
+File Format .B2S Version 1
+==========================
+
+   This is a brief outline/byte map of the .B2S file format.  Please refer
+   to the documentation for the .B2S file format for a comprehensive
+   explanation of the format.
+
+   Flags     Description
+    0x01     Use Unicode strings
+    0x02     Content uses LZMA compression
+
+   Offset    Bytes     Description
+     0x00        4     Magic ID (0x42325300 == "B2S")
+     0x04        4     File Format Version Current (1)
+     0x08        4     File Format Version Age (0)
+     0x0C        8     Header Length
+     0x14       20     Orig File SHA1 Hash
+     0x28        8     Orig File Size
+     0x30        8     Orig File: Number of Parts
+     0x38        8     Content: Index Number
+     0x40       20     Content: SHA1 Seed
+     0x54        8     Content: Offset from beginning of original
+     0x5C        8     Content: Flags
+     0x64        8     Content: CRC Check Chunk Size
+     0x6C        8     Length of Orignal File Name (VAL: X)
+     0x74        8     Length of Content  (VAL: Y)
+     0x7C        8     Length of Array of Uncompressed Content CRCs (VAL: Z)
+     0x84        8     Length of Array of Chips SHA1 Digests
+     0x8C        8     Offset in file for file SHA1 (~last 20 bytes of file)
+     0x94        *     Orignal File Name
+        *        *     Content
+        *        *     Array of CRCs for Content
+        *        *     Array of SHA1 Digests for Files' Contents
+        *       20     SHA1 Digest of this file
 
 
 Maintainers
