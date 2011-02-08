@@ -59,15 +59,7 @@ lib_LTLIBRARIES				=
 man_MANS				=
 noinst_LTLIBRARIES			=
 noinst_HEADERS				=
-bin_PROGRAMS				= src/filehatchet
-
-
-# macros for src/filehatchet
-src_filehatchet_DEPENDENCIES		= $(lib_LTLIBRARIES) Makefile
-src_filehatchet_CPPFLAGS		= -DPROGRAM_NAME="\"filehatchet\"" $(AM_CPPFLAGS)
-src_filehatchet_SOURCES			= $(noinst_HEADERS) \
-					  src/filehatchet.c \
-					  src/filehatchet.h
+bin_PROGRAMS				=
 
 
 # substitution routine
