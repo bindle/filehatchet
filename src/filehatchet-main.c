@@ -66,6 +66,31 @@
 #include <getopt.h>
 
 
+///////////////////
+//               //
+//  Definitions  //
+//               //
+///////////////////
+#pragma mark -
+#pragma mark Definitions & Macros
+
+#ifndef PROGRAM_NAME
+#define PROGRAM_NAME "filehatchet"
+#endif
+
+#ifndef PACKAGE_BUGREPORT
+#define PACKAGE_BUGREPORT "syzdek@bindlebinaries.com"
+#endif
+
+#ifndef PACKAGE_NAME
+#define PACKAGE_NAME "File Hatchet"
+#endif
+
+#ifndef PACKAGE_VERSION
+#define PACKAGE_VERSION ""
+#endif
+
+
 //////////////////
 //              //
 //  Prototypes  //
@@ -73,6 +98,12 @@
 //////////////////
 #pragma mark -
 #pragma mark Prototypes
+
+// displays usage
+void filehatchet_usage(void);
+
+// displays version
+void filehatchet_version(void);
 
 // main statement
 int main(int argc, char * argv[]);
@@ -86,6 +117,36 @@ int main(int argc, char * argv[]);
 #pragma mark -
 #pragma mark Functions
 
+/// displays usage
+void filehatchet_usage(void)
+{
+   printf(("Usage: %s [OPTIONS]\n"
+         "  -h, --help                print this help and exit\n"
+         "  -q, --quiet, --silent     do not print messages\n"
+         "  -V, --version             print version number and exit\n"
+         "  -v, --verbose             print verbose messages\n"
+         "\n"
+         "Report bugs to <%s>.\n"
+      ), PROGRAM_NAME, PACKAGE_BUGREPORT
+   );
+   return;
+}
+
+
+/// displays version information
+void filehatchet_version(void)
+{
+   printf(("%s (%s) %s\n"
+         "Written by David M. Syzdek.\n"
+         "\n"
+         "Copyright 2011 Bindle Binaries <syzdek@bindlebinaries.com>.\n"
+         "This is free software; see the source for copying conditions.  There is NO\n"
+         "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n"
+      ), PROGRAM_NAME, PACKAGE_NAME, PACKAGE_VERSION
+   );
+   return;
+}
+
 
 /// main statement
 /// @param[in]  argc  number of arguments passed to program
@@ -93,9 +154,45 @@ int main(int argc, char * argv[]);
 int main(int argc, char * argv[])
 {
    int           c;
+   int           opt_index;
 
-   for(c = 0; c < argc; c++)
-      printf("%s\n", argv[c]);
+   static char   short_opt[] = "hqVv";
+   static struct option long_opt[] =
+   {
+      {"help",          no_argument, 0, 'h'},
+      {"silent",        no_argument, 0, 'q'},
+      {"quiet",         no_argument, 0, 'q'},
+      {"verbose",       no_argument, 0, 'v'},
+      {"version",       no_argument, 0, 'V'},
+      {NULL,            0,           0, 0  }
+   };
+
+   while((c = getopt_long(argc, argv, short_opt, long_opt, &opt_index)) != -1)
+   {
+      switch(c)
+      {
+         case -1:	/* no more arguments */
+         case 0:	/* long options toggles */
+            break;
+         case 'h':
+            filehatchet_usage();
+            return(0);
+         case 'q':
+            break;
+         case 'V':
+            filehatchet_version();
+            return(0);
+         case 'v':
+            break;
+         case '?':
+            fprintf(stderr, "Try `%s --help' for more information.\n", PROGRAM_NAME);
+            return(1);
+         default:
+            fprintf(stderr, "%s: unrecognized option `--%c'\n", PROGRAM_NAME, c);
+            fprintf(stderr, "Try `%s --help' for more information.\n", PROGRAM_NAME);
+            return(1);
+      };
+   };
 
    return(0);
 }
