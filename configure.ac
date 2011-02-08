@@ -137,9 +137,8 @@ AC_OUTPUT
 AC_MSG_NOTICE([ ])
 AC_MSG_NOTICE([   File Hatchet])
 AC_MSG_NOTICE([ ])
-AC_MSG_NOTICE([   Please send suggestions to:   $PACKAGE_BUGREPORT])
-AC_MSG_NOTICE([ ])
-AC_MSG_NOTICE([   run 'make all'])
+AC_MSG_NOTICE([   File Hatchet is still in development. Please use])
+AC_MSG_NOTICE([   branches 'next' and 'pu' for pre-release testing.])
 AC_MSG_NOTICE([ ])
 
 # end of configure.ac
