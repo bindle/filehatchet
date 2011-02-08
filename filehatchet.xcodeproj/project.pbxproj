@@ -1,0 +1,130 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXFileReference section */
+		A01EAC781300F445003B315F /* acinclude.m4 */ = {isa = PBXFileReference; explicitFileType = text.script; fileEncoding = 4; path = acinclude.m4; sourceTree = "<group>"; };
+		A01EAC791300F445003B315F /* ChangeLog */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 8; lastKnownFileType = text; path = ChangeLog; sourceTree = "<group>"; tabWidth = 8; usesTabs = 1; };
+		A01EAC7A1300F445003B315F /* configure.ac */ = {isa = PBXFileReference; explicitFileType = text.script; fileEncoding = 4; path = configure.ac; sourceTree = "<group>"; };
+		A01EAC7B1300F445003B315F /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 8; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; tabWidth = 8; usesTabs = 1; };
+		A01EAC7D1300F445003B315F /* filehatchet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = filehatchet.h; sourceTree = "<group>"; };
+		A01EAC7F1300F445003B315F /* libfilehatchet-memory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "libfilehatchet-memory.c"; sourceTree = "<group>"; };
+		A01EAC801300F445003B315F /* libfilehatchet-memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "libfilehatchet-memory.h"; sourceTree = "<group>"; };
+		A01EAC811300F445003B315F /* libfilehatchet.sym */ = {isa = PBXFileReference; explicitFileType = text.script; fileEncoding = 4; path = libfilehatchet.sym; sourceTree = "<group>"; };
+		A01EAC891300F445003B315F /* Makefile.am */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; fileEncoding = 4; indentWidth = 8; path = Makefile.am; sourceTree = "<group>"; tabWidth = 8; usesTabs = 1; };
+		A01EAC8A1300F445003B315F /* NEWS */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 8; lastKnownFileType = text; path = NEWS; sourceTree = "<group>"; tabWidth = 8; usesTabs = 1; };
+		A01EAC8B1300F445003B315F /* README */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 8; lastKnownFileType = text; path = README; sourceTree = "<group>"; tabWidth = 8; usesTabs = 1; };
+		A01EAC8D1300F445003B315F /* filehatchet-main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "filehatchet-main.c"; sourceTree = "<group>"; };
+		A01EAC951300F45E003B315F /* git-package-version.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "git-package-version.sh"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		A005262E1300F40900D86C0E = {
+			isa = PBXGroup;
+			children = (
+				A01EAC781300F445003B315F /* acinclude.m4 */,
+				A01EAC8E1300F45E003B315F /* build-aux */,
+				A01EAC791300F445003B315F /* ChangeLog */,
+				A01EAC7A1300F445003B315F /* configure.ac */,
+				A01EAC7B1300F445003B315F /* COPYING */,
+				A01EAC7C1300F445003B315F /* include */,
+				A01EAC7E1300F445003B315F /* lib */,
+				A01EAC891300F445003B315F /* Makefile.am */,
+				A01EAC8A1300F445003B315F /* NEWS */,
+				A01EAC8B1300F445003B315F /* README */,
+				A01EAC8C1300F445003B315F /* src */,
+			);
+			sourceTree = "<group>";
+		};
+		A01EAC7C1300F445003B315F /* include */ = {
+			isa = PBXGroup;
+			children = (
+				A01EAC7D1300F445003B315F /* filehatchet.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		A01EAC7E1300F445003B315F /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				A01EAC7F1300F445003B315F /* libfilehatchet-memory.c */,
+				A01EAC801300F445003B315F /* libfilehatchet-memory.h */,
+				A01EAC811300F445003B315F /* libfilehatchet.sym */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		A01EAC8C1300F445003B315F /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A01EAC8D1300F445003B315F /* filehatchet-main.c */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		A01EAC8E1300F45E003B315F /* build-aux */ = {
+			isa = PBXGroup;
+			children = (
+				A01EAC951300F45E003B315F /* git-package-version.sh */,
+			);
+			path = "build-aux";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		A00526301300F40900D86C0E /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = A00526331300F40900D86C0E /* Build configuration list for PBXProject "filehatchet" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = A005262E1300F40900D86C0E;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		A00526311300F40900D86C0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		A00526321300F40900D86C0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A00526331300F40900D86C0E /* Build configuration list for PBXProject "filehatchet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00526311300F40900D86C0E /* Debug */,
+				A00526321300F40900D86C0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A00526301300F40900D86C0E /* Project object */;
+}
