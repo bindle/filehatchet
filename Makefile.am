@@ -115,7 +115,8 @@ TESTS					=
 XFAIL_TESTS				=
 EXTRA_MANS				=
 EXTRA_DIST				= build-aux/git-package-version \
-					  build-aux/git-package-version.sh
+					  build-aux/git-package-version.sh \
+					  lib/libfilehatchet.sym
 CLEANFILES				= \
 					  $(builddir)/a.out   $(srcdir)/a.out \
 					  $(builddir)/*/a.out $(srcdir)/*/a.out \
