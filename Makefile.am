@@ -52,14 +52,27 @@ DEFS					=
 
 
 # automake targets
-check_PROGRAMS				=
-doc_DATA				=
-include_HEADERS				=
-lib_LTLIBRARIES				=
-man_MANS				=
-noinst_LTLIBRARIES			=
-noinst_HEADERS				=
-bin_PROGRAMS				=
+include_HEADERS				= include/filehatchet.h
+lib_LTLIBRARIES				= lib/libfilehatchet.la
+bin_PROGRAMS				= src/filehatchet
+
+
+# macros for lib/libfilehatchet.la
+lib_libfilehatchet_la_DEPENDENCIES	= Makefile lib/libfilehatchet.sym
+lib_libfilehatchet_la_LDFLAGS		= -rpath '$(libdir)' \
+                                          -version-info $(LIB_VERSION_INFO) \
+                                          $(AM_LDFLAGS) \
+					  -export-symbols $(srcdir)/lib/libfilehatchet.sym
+lib_libfilehatchet_la_SOURCES		= $(include_HEADERS) \
+					  lib/libfilehatchet-memory.c \
+					  lib/libfilehatchet-memory.h
+
+
+# macros for src/filehatchet
+src_filehatchet_DEPENDENCIES		= $(lib_LTLIBRARIES) Makefile
+src_filehatchet_CPPFLAGS		= -DPROGRAM_NAME="\"filehatchet\"" $(AM_CPPFLAGS)
+src_filehatchet_SOURCES			= $(include_HEADERS) \
+					  src/filehatchet-main.c
 
 
 # substitution routine
