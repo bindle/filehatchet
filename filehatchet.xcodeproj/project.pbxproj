@@ -20,6 +20,7 @@
 		A01EAC8B1300F445003B315F /* README */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 8; lastKnownFileType = text; path = README; sourceTree = "<group>"; tabWidth = 8; usesTabs = 1; };
 		A01EAC8D1300F445003B315F /* filehatchet-main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "filehatchet-main.c"; sourceTree = "<group>"; };
 		A01EAC951300F45E003B315F /* git-package-version.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "git-package-version.sh"; sourceTree = "<group>"; };
+		A06A621313086AE6001E713C /* rfc4506.txt */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 8; lastKnownFileType = text; path = rfc4506.txt; sourceTree = "<group>"; tabWidth = 8; usesTabs = 1; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -31,6 +32,7 @@
 				A01EAC791300F445003B315F /* ChangeLog */,
 				A01EAC7A1300F445003B315F /* configure.ac */,
 				A01EAC7B1300F445003B315F /* COPYING */,
+				A06A621213086AE6001E713C /* doc */,
 				A01EAC7C1300F445003B315F /* include */,
 				A01EAC7E1300F445003B315F /* lib */,
 				A01EAC891300F445003B315F /* Makefile.am */,
@@ -72,6 +74,14 @@
 				A01EAC951300F45E003B315F /* git-package-version.sh */,
 			);
 			path = "build-aux";
+			sourceTree = "<group>";
+		};
+		A06A621213086AE6001E713C /* doc */ = {
+			isa = PBXGroup;
+			children = (
+				A06A621313086AE6001E713C /* rfc4506.txt */,
+			);
+			path = doc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
