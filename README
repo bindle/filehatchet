@@ -61,23 +61,21 @@ File Format .B2S Version 1
      0x04        4     File Format Version Current (1)
      0x08        4     File Format Version Age (0)
      0x0C        8     Header Length
-     0x14       20     Orig File SHA1 Hash
-     0x28        8     Orig File Size
-     0x30        8     Orig File: Number of Parts
-     0x38        8     Content: Index Number
-     0x40       20     Content: SHA1 Seed
-     0x54        8     Content: Offset from beginning of original
-     0x5C        8     Content: Flags
-     0x64        8     Content: CRC Check Chunk Size
-     0x6C        8     Length of Orignal File Name (VAL: X)
-     0x74        8     Length of Content  (VAL: Y)
-     0x7C        8     Length of Array of Uncompressed Content CRCs (VAL: Z)
-     0x84        8     Length of Array of Chips SHA1 Digests
-     0x8C        8     Offset in file for file SHA1 (~last 20 bytes of file)
-     0x94        *     Orignal File Name
+     0x14        8     Flags (Boolean Options)
+     0x1C       20     Orig File SHA1 Hash
+     0x30        8     Orig File Size
+     0x38        8     Orig File: Number of Parts
+     0x40        8     Orig File: Length of File Name (VAL: X)
+     0x48        8     Orig File: Chip size
+     0x50        8     Orig FIle: SHA1 Digest Check Chunk Size
+     0x58        8     Content: Index Number
+     0x60        8     Content: Offset from beginning of original
+     0x68        8     Content: Length (VAL: Y)
+     0x70        8     Content: Length of Array of Offsets/SHA1 Digest (VAL: Z)
+     0x78        8     Content: Offset in file for file SHA1
+     0x80        *     Orignal File Name
         *        *     Content
-        *        *     Array of CRCs for Content
-        *        *     Array of SHA1 Digests for Files' Contents
+        *        *     Array of Content Chunk Offsets from Original/SHA1 Digest
         *       20     SHA1 Digest of this file
 
 
