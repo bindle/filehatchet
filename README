@@ -78,6 +78,12 @@ File Format .B2S Version 1
         *        *     Array of Content Chunk Offsets from Original/SHA1 Digest
         *       20     SHA1 Digest of this file
 
+   Chip with content index of zero is used as an index file and will not
+   contain content from the original file, but can be used to regenerate a
+   specific chip from the original file, to generate a custom chip from the
+   original file, to validate the recreated original file, and to identify
+   corrupt segments of the original file.
+
 
 Maintainers
 ===========
