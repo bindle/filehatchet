@@ -81,11 +81,35 @@ File Format .B2S Version 1
         *        *     Array of Content Chunk Offsets from Original/SHA1 Digest
         *       20     SHA1 Digest of this file
 
+   XDR Notation:
+      unsigned int     magicID;
+      unsigned int     versionCurrent;
+      unsigned int     versionAge;
+      unsigned hyper   headerSize;
+      unsigned hyper   flags;
+      opaque           origSHA1[20];
+      unsigned hyper   origSize;
+      unsigned hyper   origNumOfChips;
+      unsigned hyper   origMaxChipSize;
+      unsigned hyper   origNameLength;
+      unsigned hyper   origSHA1MaxChunkSize;
+      hyper            contentIndex;
+      unsigned hyper   contentOffset;
+      unsigned hyper   contentOffsetFromOrig;
+      unsigned hyper   contentSize;
+      unsigned hyper   contentSizeInOrig;
+      unsigned hyper   digestOffset;
+      unsigned hyper   digestSize;
+      unsigned hyper   digestLength;
+
    Chip with content index of zero is used as an index file and will not
    contain content from the original file, but can be used to regenerate a
    specific chip from the original file, to generate a custom chip from the
    original file, to validate the recreated original file, and to identify
    corrupt segments of the original file.
+
+   Chip with content index of negative one indicates that the content is not
+   apart of a series of chips, but of a custom chip size and offset.
 
 
 Maintainers
