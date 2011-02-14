@@ -60,20 +60,23 @@ File Format .B2S Version 1
      0x00        4     Magic ID (0x42325300 == "B2S")
      0x04        4     File Format Version Current (1)
      0x08        4     File Format Version Age (0)
-     0x0C        8     Header Length
+     0x0C        8     Header Size
      0x14        8     Flags (Boolean Options)
      0x1C       20     Orig File SHA1 Hash
      0x30        8     Orig File Size
-     0x38        8     Orig File: Number of Parts
-     0x40        8     Orig File: Length of File Name (VAL: X)
-     0x48        8     Orig File: Chip size
-     0x50        8     Orig FIle: SHA1 Digest Check Chunk Size
+     0x38        8     Orig File: Number of Chips
+     0x40        8     Orig File: Chip Maximum Size
+     0x48        8     Orig File: Length of File Name (VAL: X)
+     0x50        8     Orig FIle: SHA1 Digest Check Chunk Maximum Size
      0x58        8     Content: Index Number
-     0x60        8     Content: Offset from beginning of original
-     0x68        8     Content: Length (VAL: Y)
-     0x70        8     Content: Length of Array of Offsets/SHA1 Digest (VAL: Z)
-     0x78        8     Content: Offset in file for file SHA1
-     0x80        *     Orignal File Name
+     0x60        8     Content: Offset
+     0x68        8     Content: Offset from beginning of original
+     0x70        8     Content: Size (VAL: Y)
+     0x78        8     Content: Size in Original
+     0x80        8     Digest: Offset
+     0x88        8     Digest: Size
+     0x90        8     Digest: Length of Array of Offsets/SHA1 Digest (VAL: Z)
+     0x98        *     Orignal File Name
         *        *     Content
         *        *     Array of Content Chunk Offsets from Original/SHA1 Digest
         *       20     SHA1 Digest of this file
