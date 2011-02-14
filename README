@@ -43,6 +43,12 @@ Software Requirements
 =====================
 
    Git 1.7.2.3
+   GNU Autoconf 2.68
+   GNU Automake 1.11.1
+   GNU Libtool 2.4
+   GCC 4.2.1
+   OpenSSL 1.0.0c
+   XZ Utils 5.0.0
 
 
 File Format .B2S Version 1
