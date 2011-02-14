@@ -52,42 +52,6 @@ File Format .B2S Version 1
    to the documentation for the .B2S file format for a comprehensive
    explanation of the format.
 
-   Flags     Description
-    0x01     Use Unicode strings
-    0x02     Content uses LZMA compression
-    0x04     Use SHA1 for data integrity
-    0x08     Use SHA1 digest of original file is the file identifier
-
-   File Format:
-     Offset  Bytes     Description
-       0x00      4     Magic ID (0x42325300 == "B2S")
-       0x04      4     File Format Version Current (1)
-       0x08      4     File Format Version Age (0)
-       0x0C      8     Flags (Boolean Options)
-       0x14     20     Orig File Identifier
-       0x28      8     Orig File Size
-       0x30      8     Orig File: Number of Chips
-       0x38      8     Orig File: Chip Maximum Size
-       0x40      8     Orig FIle: Data Chunk Maximum Size
-       0x48      8     Content: Index Number
-       0x50      8     Content: Offset
-       0x58      8     Content: Size
-       0x60      4     Length of original file name
-       0x64      *     Encoded orignal File Name (either UTF8 or Unicode)
-          *      4     Length of array of chunks
-          *      *     Array of Chunks
-          *     20     Digest of this file
-
-   Chunk Format:
-     Offset  Bytes     Description
-       0x00      8     Offset from beginning of original file
-       0x08      4     Length of encoded data
-          *      *     encoded data
-	  *     20     digest of un-encoded data
-
-   XDR Description:
-   ----------------
-
    /* XDR Description of .B2S file Format */
 
    const FILEHATCHET_MAGIC_ID      0x42325300 /* "B2S" */
