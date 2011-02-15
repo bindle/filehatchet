@@ -59,6 +59,13 @@
 #pragma mark -
 #pragma mark Definitions & Macros
 
+#define FILEHATCHET_MAGIC_ID       0x42325300L
+
+#define FILEHATCHET_OPT_UNICODE    0x01L
+#define FILEHATCHET_OPT_LZMA       0x02L
+#define FILEHATCHET_OPT_SHA1DIGEST 0x04L
+#define FILEHATCHET_OPT_SHA1ID     0x08L
+
 
 /////////////////
 //             //
@@ -67,6 +74,40 @@
 /////////////////
 #pragma mark -
 #pragma mark Datatypes
+
+/// contains information about a File Hatchet chunk
+typedef struct filehatchet_b2schunk B2SChunk;
+struct filehatchet_b2schunk
+{
+   uint64_t   offset;      ///< data offset from beginning of original file
+   uint64_t   dataSize;    ///< length of encoded data
+   uint8_t  * data;        ///< pointer to encoded data
+   uint8_t    digest[24];  ///< digest used to verify data integrity
+};
+
+
+/// contains information about a File Hatchet file
+typedef struct filehatchet_b2sfile B2SFile;
+struct filehatchet_b2sfile
+{
+   uint64_t   magicID;            ///< magic number of file
+   uint64_t   versionCurrent;     ///< current version number of this API
+   uint64_t   versionAge;         ///< number of compatible seqential past versions
+   uint64_t   flags;              ///< options for processing file
+   uint8_t    origID[24];         ///< unique identifier of original file
+   uint64_t   origSize;           ///< original file size
+   uint64_t   origNumOfChips;     ///< number of file "chips" created
+   uint64_t   origMaxChipSize;    ///< maximum size of file "chips"
+   uint64_t   origMaxChunkSize;   ///< maximum size of chunk within chip
+   int64_t    contentIndex;       ///< index of chip within the sequence of chips
+   uint64_t   contentOffset;      ///< offset of chip's content from within original file
+   uint64_t   contentSize;        ///< unencoded size of chip's content
+   uint64_t   origFileNameSize;   ///< size of original file's name
+   uint8_t  * origFileName;       ///< encoded name of original file
+   uint64_t   numOfChunks;        ///< number of chunks within file
+   B2SChunk * chunks;             ///< pointer to array of chunks
+   uint8_t    digest[24];         ///< digest used to verify data integrity
+};
 
 
 //////////////////
