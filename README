@@ -87,7 +87,7 @@ File Format .B2S Version 1
       unsigned hyper   contentOffset;    /* offset: 0x50 */
       unsigned hyper   contentSize;      /* offset: 0x58 */
       opaque           origFileName<>;   /* offset: 0x60 */
-      struct b2sChunk  content<>;        /* offset:      */
+      struct b2sChunk  chunks<>;         /* offset:      */
       opaque           digest[20];       /* offset:      */
    } b2sFile;
 
