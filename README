@@ -54,9 +54,28 @@ Software Requirements
 File Format .B2S Version 1
 ==========================
 
-   This is a brief outline/byte map of the .B2S file format.  Please refer
-   to the documentation for the .B2S file format for a comprehensive
-   explanation of the format.
+   The Big To Small file format is used to split a large file into multiple
+   smaller segment files.  The segment files internally store the contents
+   of the original file as data chunks.
+
+                          Original File
+                               /|\
+                             /  |  \
+			   /    |    \
+		   Segment   Segment   Segment
+		   /\          /\           /\
+                  /  \        /  \         /  \
+  	      Chunk Chunk  Chunk Chunk  Chunk Chunk
+
+   Each segment file contains an identifier which specifies the format of the
+   file, options used to encode the file, data which describes the segment of
+   content from the original file, a series of chunks, and a digest of the
+   segnment file.
+
+   Each chunk contains the offset of the chunk's data within the original
+   file, the length of the encoded data within the segment file, a piece of
+   the encoded data of the original file, and a digest of the original data
+   contained within the chunk.
 
    /* XDR Description of .B2S file Format */
 
