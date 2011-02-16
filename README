@@ -3,12 +3,12 @@ File Hatchet
 ============
 
    File Hatchet is a utility for splitting a large file into multiple smaller
-   "chip" files for distribution. The chip files use the file format .B2S
+   segment files for distribution. The segment files use the file format .B2S
    (Big To Small).  Planned features for File Hatchet include the ability to
-   verify data integrity of both the "chips" and the restored orignal file;
-   the ability to incrementally rebuild the original file from the chips; the
-   ability to regenerate any one chip from the original file; and the ability
-   to repair the corrupted segments of the orignal file using the chips.
+   verify data integrity of both the segments and the restored orignal file;
+   the ability to incrementally rebuild the original file from the segments;
+   the ability to regenerate any one segment from the original file; and the
+   ability to repair the corrupted parts of the orignal file using the chips.
 
 
 Contents
@@ -93,14 +93,14 @@ File Format .B2S Version 1
 
    /* end of XDR description */
 
-   Chip with content index of zero is used as an index file and will not
-   contain content from the original file, but can be used to regenerate a
-   specific chip from the original file, to generate a custom chip from the
-   original file, to validate the recreated original file, and to identify
-   corrupt segments of the original file.
+   A segment file with content index of zero is used as an index file and will
+   not contain content from the original file, but can be used to regenerate a
+   specific segment from the original file, to generate a custom segment from
+   the original file, to validate the recreated original file, and to identify
+   corrupt parts of the original file.
 
-   Chip with content index of negative one indicates that the content is not
-   from of a series of chips, but of a custom chip size and offset.
+   A segment with content index of negative one indicates that the content is
+   not from of a series of segments, but of a custom segment size and offset.
 
 
 Maintainers
