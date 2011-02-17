@@ -32,9 +32,9 @@
  *  @BINDLE_BINARIES_BSD_LICENSE_END@
  */
 /**
- *  @file lib/libfilehatchet-memory.c File Hatchet memory functions
+ *  @file lib/libb2s-memory.c B2S memory functions
  */
-#include "libfilehatchet-memory.h"
+#include "libb2s-memory.h"
 
 ///////////////
 //           //

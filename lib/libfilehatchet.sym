@@ -31,25 +31,25 @@
 #
 #   @BINDLE_BINARIES_BSD_LICENSE_END@
 #
-#   lib/libfilehatchet.sym - list of symbols to export in libfilehatchet.la
+#   lib/libb2s.sym - list of symbols to export in libb2s.la
 #
 #   Build:
 #      CFLAGS="-g -O2 -W -Wall -Werror -I../include"
-#      LDFLAGS="-g -O2 -export-symbols libfilehatchet.sym -rpath /usr/local/lib"
+#      LDFLAGS="-g -O2 -export-symbols libb2s.sym -rpath /usr/local/lib"
 #      export CFLAGS LDFLAGS
 #
-#      libtool --mode=compile gcc ${CFLAGS}  -c libfilehatchet-memory.c
-#      libtool --mode=link    gcc ${LDFLAGS} -o libfilehatchet.la libfilehatchet-memory.lo
+#      libtool --mode=compile gcc ${CFLAGS}  -c libb2s-memory.c
+#      libtool --mode=link    gcc ${LDFLAGS} -o libb2s.la libb2s-memory.lo
 #
 #   Install:
-#      libtool --mode=install install -c libzArchive.la /usr/local/lib/libfilehatchet.la
+#      libtool --mode=install install -c libb2s.la /usr/local/lib/libb2s.la
 #
 #   Uninstall:
-#      libtool --mode=uninstall rm -f /usr/local/lib/libfilehatchet.la
+#      libtool --mode=uninstall rm -f /usr/local/lib/libb2s.la
 #
 #   Clean:
-#      libtool --mode=clean rm -f libzArchive.la libzfilehatchet-memory.lo
+#      libtool --mode=clean rm -f libb2s.la libb2s-memory.lo
 #
-filehatchet_free
-filehatchet_init
+libb2s_free
+libb2s_init
 # end of symbol export file

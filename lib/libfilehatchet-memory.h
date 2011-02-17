@@ -32,10 +32,10 @@
  *  @BINDLE_BINARIES_BSD_LICENSE_END@
  */
 /**
- *  @file lib/libfilehatchet-memory.h File Hatchet memory functions
+ *  @file lib/libb2s-memory.h B2S memory functions
  */
-#ifndef _FILEHATCHET_LIB_MEMORY_H
-#define _FILEHATCHET_LIB_MEMORY_H 1
+#ifndef _LIB_LIBB2S_MEMORY_H
+#define _LIB_LIBB2S_MEMORY_H 1
 
 ///////////////
 //           //
@@ -44,7 +44,7 @@
 ///////////////
 #pragma mark Headers
 
-#include <filehatchet.h>
+#include <b2s.h>
 
 
 //////////////////
