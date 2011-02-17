@@ -11,10 +11,10 @@
 		A01EAC791300F445003B315F /* ChangeLog */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 8; lastKnownFileType = text; path = ChangeLog; sourceTree = "<group>"; tabWidth = 8; usesTabs = 1; };
 		A01EAC7A1300F445003B315F /* configure.ac */ = {isa = PBXFileReference; explicitFileType = text.script; fileEncoding = 4; path = configure.ac; sourceTree = "<group>"; };
 		A01EAC7B1300F445003B315F /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 8; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; tabWidth = 8; usesTabs = 1; };
-		A01EAC7D1300F445003B315F /* filehatchet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = filehatchet.h; sourceTree = "<group>"; };
-		A01EAC7F1300F445003B315F /* libfilehatchet-memory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "libfilehatchet-memory.c"; sourceTree = "<group>"; };
-		A01EAC801300F445003B315F /* libfilehatchet-memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "libfilehatchet-memory.h"; sourceTree = "<group>"; };
-		A01EAC811300F445003B315F /* libfilehatchet.sym */ = {isa = PBXFileReference; explicitFileType = text.script; fileEncoding = 4; path = libfilehatchet.sym; sourceTree = "<group>"; };
+		A01EAC7D1300F445003B315F /* b2s.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = b2s.h; sourceTree = "<group>"; };
+		A01EAC7F1300F445003B315F /* libb2s-memory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "libb2s-memory.c"; sourceTree = "<group>"; };
+		A01EAC801300F445003B315F /* libb2s-memory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "libb2s-memory.h"; sourceTree = "<group>"; };
+		A01EAC811300F445003B315F /* libb2s.sym */ = {isa = PBXFileReference; explicitFileType = text.script; fileEncoding = 4; path = libb2s.sym; sourceTree = "<group>"; };
 		A01EAC891300F445003B315F /* Makefile.am */ = {isa = PBXFileReference; explicitFileType = sourcecode.make; fileEncoding = 4; indentWidth = 8; path = Makefile.am; sourceTree = "<group>"; tabWidth = 8; usesTabs = 1; };
 		A01EAC8A1300F445003B315F /* NEWS */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 8; lastKnownFileType = text; path = NEWS; sourceTree = "<group>"; tabWidth = 8; usesTabs = 1; };
 		A01EAC8B1300F445003B315F /* README */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 8; lastKnownFileType = text; path = README; sourceTree = "<group>"; tabWidth = 8; usesTabs = 1; };
@@ -45,7 +45,7 @@
 		A01EAC7C1300F445003B315F /* include */ = {
 			isa = PBXGroup;
 			children = (
-				A01EAC7D1300F445003B315F /* filehatchet.h */,
+				A01EAC7D1300F445003B315F /* b2s.h */,
 			);
 			path = include;
 			sourceTree = "<group>";
@@ -53,9 +53,9 @@
 		A01EAC7E1300F445003B315F /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				A01EAC7F1300F445003B315F /* libfilehatchet-memory.c */,
-				A01EAC801300F445003B315F /* libfilehatchet-memory.h */,
-				A01EAC811300F445003B315F /* libfilehatchet.sym */,
+				A01EAC7F1300F445003B315F /* libb2s-memory.c */,
+				A01EAC801300F445003B315F /* libb2s-memory.h */,
+				A01EAC811300F445003B315F /* libb2s.sym */,
 			);
 			path = lib;
 			sourceTree = "<group>";

@@ -62,7 +62,7 @@
 #include <config.h>
 #endif
 
-#include <filehatchet.h>
+#include <b2s.h>
 
 #include <stdio.h>
 #include <stdlib.h>

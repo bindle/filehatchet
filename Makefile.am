@@ -52,20 +52,20 @@ DEFS					=
 
 
 # automake targets
-include_HEADERS				= include/filehatchet.h
-lib_LTLIBRARIES				= lib/libfilehatchet.la
+include_HEADERS				= include/b2s.h
+lib_LTLIBRARIES				= lib/libb2s.la
 bin_PROGRAMS				= src/filehatchet
 
 
 # macros for lib/libfilehatchet.la
-lib_libfilehatchet_la_DEPENDENCIES	= Makefile lib/libfilehatchet.sym
-lib_libfilehatchet_la_LDFLAGS		= -rpath '$(libdir)' \
+lib_libb2s_la_DEPENDENCIES		= Makefile lib/libb2s.sym
+lib_libb2s_la_LDFLAGS			= -rpath '$(libdir)' \
                                           -version-info $(LIB_VERSION_INFO) \
                                           $(AM_LDFLAGS) \
-					  -export-symbols $(srcdir)/lib/libfilehatchet.sym
-lib_libfilehatchet_la_SOURCES		= $(include_HEADERS) \
-					  lib/libfilehatchet-memory.c \
-					  lib/libfilehatchet-memory.h
+					  -export-symbols $(srcdir)/lib/libb2s.sym
+lib_libb2s_la_SOURCES			= $(include_HEADERS) \
+					  lib/libb2s-memory.c \
+					  lib/libb2s-memory.h
 
 
 # macros for src/filehatchet
@@ -116,7 +116,7 @@ XFAIL_TESTS				=
 EXTRA_MANS				=
 EXTRA_DIST				= build-aux/git-package-version \
 					  build-aux/git-package-version.sh \
-					  lib/libfilehatchet.sym
+					  lib/libb2s.sym
 CLEANFILES				= \
 					  $(builddir)/a.out   $(srcdir)/a.out \
 					  $(builddir)/*/a.out $(srcdir)/*/a.out \
