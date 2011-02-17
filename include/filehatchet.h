@@ -32,10 +32,10 @@
  *  @BINDLE_BINARIES_BSD_LICENSE_END@
  */
 /**
- *  @file include/filehatchet.h File splitting utility
+ *  @file include/b2s.h .B2S API
  */
-#ifndef _FILE_HATCHET_H
-#define _FILE_HATCHET_H 1
+#ifndef _B2S_H
+#define _B2S_H 1
 
 ///////////////
 //           //
@@ -59,12 +59,12 @@
 #pragma mark -
 #pragma mark Definitions & Macros
 
-#define FILEHATCHET_MAGIC_ID       0x42325300L
+#define B2S_MAGIC_ID       0x42325300L
 
-#define FILEHATCHET_OPT_UNICODE    0x01L
-#define FILEHATCHET_OPT_LZMA       0x02L
-#define FILEHATCHET_OPT_SHA1DIGEST 0x04L
-#define FILEHATCHET_OPT_SHA1ID     0x08L
+#define B2S_OPT_UNICODE    0x01L
+#define B2S_OPT_LZMA       0x02L
+#define B2S_OPT_SHA1DIGEST 0x04L
+#define B2S_OPT_SHA1ID     0x08L
 
 
 /////////////////
@@ -75,9 +75,9 @@
 #pragma mark -
 #pragma mark Datatypes
 
-/// contains information about a File Hatchet chunk
-typedef struct filehatchet_b2schunk B2SChunk;
-struct filehatchet_b2schunk
+/// contains information about a B2S chunk
+typedef struct bs2_chunk B2SChunk;
+struct bs2_chunk
 {
    uint64_t   offset;      ///< data offset from beginning of original file
    uint64_t   dataSize;    ///< length of encoded data
@@ -87,21 +87,21 @@ struct filehatchet_b2schunk
 
 
 /// contains information about a File Hatchet file
-typedef struct filehatchet_b2sfile B2SFile;
-struct filehatchet_b2sfile
+typedef struct b2_sfile B2SFile;
+struct b2_sfile
 {
-   uint64_t   magicID;            ///< magic number of file
+   uint64_t   magicNumber;        ///< magic number of file
    uint64_t   versionCurrent;     ///< current version number of this API
    uint64_t   versionAge;         ///< number of compatible seqential past versions
-   uint64_t   flags;              ///< options for processing file
+   uint64_t   flags;              ///< options for encoding file
    uint8_t    origID[24];         ///< unique identifier of original file
    uint64_t   origSize;           ///< original file size
-   uint64_t   origNumOfChips;     ///< number of file "chips" created
-   uint64_t   origMaxChipSize;    ///< maximum size of file "chips"
-   uint64_t   origMaxChunkSize;   ///< maximum size of chunk within chip
-   int64_t    contentIndex;       ///< index of chip within the sequence of chips
-   uint64_t   contentOffset;      ///< offset of chip's content from within original file
-   uint64_t   contentSize;        ///< unencoded size of chip's content
+   uint64_t   origNumOfSeg;       ///< number of file segments created
+   uint64_t   origMaxSegSize;     ///< maximum size of file segments
+   uint64_t   origMaxChunkSize;   ///< maximum size of chunk
+   int64_t    contentIndex;       ///< index of segment within the sequence of segments
+   uint64_t   contentOffset;      ///< offset of segment's content from within original file
+   uint64_t   contentSize;        ///< unencoded size of segment's content
    uint64_t   origFileNameSize;   ///< size of original file's name
    uint8_t  * origFileName;       ///< encoded name of original file
    uint64_t   numOfChunks;        ///< number of chunks within file
