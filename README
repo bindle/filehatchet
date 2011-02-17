@@ -79,12 +79,12 @@ File Format .B2S Version 1
 
    /* XDR Description of .B2S file Format */
 
-   const FILEHATCHET_MAGIC_ID       0x42325300 /* "B2S" */
+   const B2S_MAGIC_ID       0x42325300 /* "B2S" */
 
-   const FILEHATCHET_OPT_UNICODE    0x01
-   const FILEHATCHET_OPT_LZMA       0x02
-   const FILEHATCHET_OPT_SHA1DIGEST 0x04
-   const FILEHATCHET_OPT_SHA1ID     0x08
+   const B2S_OPT_UNICODE    0x01
+   const B2S_OPT_LZMA       0x02
+   const B2S_OPT_SHA1DIGEST 0x04
+   const B2S_OPT_SHA1ID     0x08
 
    struct {
       unsigned hyper   offset;           /* offset of data from original    */
