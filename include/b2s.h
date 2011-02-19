@@ -87,26 +87,39 @@ struct bs2_chunk
 
 
 /// contains information about a File Hatchet file
-typedef struct b2_sfile B2SFile;
-struct b2_sfile
+typedef struct b2s_file B2SFile;
+struct b2s_file
 {
-   uint64_t   magicNumber;        ///< magic number of file
-   uint64_t   versionCurrent;     ///< current version number of this API
-   uint64_t   versionAge;         ///< number of compatible seqential past versions
-   uint64_t   flags;              ///< options for encoding file
-   uint8_t    origID[24];         ///< unique identifier of original file
-   uint64_t   origSize;           ///< original file size
-   uint64_t   origNumOfSeg;       ///< number of file segments created
-   uint64_t   origMaxSegSize;     ///< maximum size of file segments
-   uint64_t   origMaxChunkSize;   ///< maximum size of chunk
-   int64_t    contentIndex;       ///< index of segment within the sequence of segments
-   uint64_t   contentOffset;      ///< offset of segment's content from within original file
-   uint64_t   contentSize;        ///< unencoded size of segment's content
-   uint64_t   origFileNameSize;   ///< size of original file's name
-   uint8_t  * origFileName;       ///< encoded name of original file
-   uint64_t   numOfChunks;        ///< number of chunks within file
-   B2SChunk * chunks;             ///< pointer to array of chunks
-   uint8_t    digest[24];         ///< digest used to verify data integrity
+   char      * file_path;          ///< file system path to .B2S file
+   uint64_t    magicNumber;        ///< magic number of file
+   uint64_t    versionCurrent;     ///< current version number of this API
+   uint64_t    versionAge;         ///< number of compatible seqential past versions
+   uint64_t    flags;              ///< options for encoding file
+   uint8_t     origID[24];         ///< unique identifier of original file
+   uint64_t    origSize;           ///< original file size
+   uint64_t    origNumOfSeg;       ///< number of file segments created
+   uint64_t    origMaxSegSize;     ///< maximum size of file segments
+   uint64_t    origMaxChunkSize;   ///< maximum size of chunk
+   int64_t     contentIndex;       ///< index of segment within the sequence of segments
+   uint64_t    contentOffset;      ///< offset of segment's content from within original file
+   uint64_t    contentSize;        ///< unencoded size of segment's content
+   uint64_t    origFileNameSize;   ///< size of original file's name
+   uint8_t   * origFileName;       ///< encoded name of original file
+   uint64_t    numOfChunks;        ///< number of chunks within file
+   B2SChunk ** chunks;             ///< pointer to array of chunks
+   uint8_t     digest[24];         ///< digest used to verify data integrity
+};
+
+
+/// contains information about a B2S chunk
+typedef struct b2s_state B2S;
+struct b2s_state
+{
+   char        * orig_file_path;   ///< file system path to original file
+   const char  * orig_file_name;   ///< name of original file
+   B2SFile     * index;            ///< .B2S Index File
+   B2SFile    ** segments;         ///< Array of .B2S file segments
+   B2SFile     * custom;           ///< Custom .B2S file segments
 };
 
 
